@@ -10,7 +10,7 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name="Postes")
-public class Poste
+public class PosteHR
 {
 	@javax.persistence.Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -20,10 +20,61 @@ public class Poste
 	private String titre;
 	private boolean disponible;
 	
+	
+	
+	public Long getId() {
+		return Id;
+	}
+
+
+
+	public void setId(Long id) {
+		Id = id;
+	}
+
+
+
+	public int getIdService() {
+		return idService;
+	}
+
+
+
+	public void setIdService(int idService) {
+		this.idService = idService;
+	}
+
+
+
+	public String getTitre() {
+		return titre;
+	}
+
+
+
+	public void setTitre(String titre) {
+		this.titre = titre;
+	}
+
+
+
+	public boolean isDisponible() {
+		return disponible;
+	}
+
+
+
+	public void setDisponible(boolean disponible) {
+		this.disponible = disponible;
+	}
+
+
+
 	@Override
 	public String toString() {
 		return "Poste [Id=" + Id + ", Service Numero=" + idService + ", titre=" + titre + ", disponible=" + disponible + "]";
 	}
+	
 	
 	
 }

@@ -10,7 +10,7 @@ import javax.persistence.Id;
 @Data
 @Entity
 @Table(name="Services")
-public class Service
+public class ServiceHR
 {
 	
 	@Id
@@ -22,6 +22,24 @@ public class Service
 	@Override
 	public String toString() {
 		return "Service :" + titre + ", nbrePoste=" + nbrePoste + "]";
+	}
+	public Long getId() {
+		return Id;
+	}
+	public void setId(Long id) {
+		Id = id;
+	}
+	public String getTitre() {
+		return titre;
+	}
+	public void setTitre(String titre) {
+		this.titre = titre;
+	}
+	public int getNbrePoste() {
+		return nbrePoste;
+	}
+	public void setNbrePoste(int nbrePoste) {
+		this.nbrePoste = nbrePoste;
 	}
 	
 	
