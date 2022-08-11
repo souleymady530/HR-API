@@ -29,7 +29,7 @@ public class EmployeController
 	
 	
 	 @PostMapping("/Employe/save")
-	 public Employe createEmploye(@RequestBody Employe employe)
+	 public String createEmploye(@RequestBody Employe employe)
 	 {
 		 return employeService.saveEmployee(employe);
 	 }
@@ -46,44 +46,16 @@ public class EmployeController
 	 
 	 
 	 @PutMapping("/Employe/{id}")
-	 public Employe updateEmploye(@PathVariable("id") final Long id, @RequestBody Employe employe)
+	 public String updateEmploye(@PathVariable("id") final Long id, @RequestBody Employe employe)
 	 {
-		 Optional<Employe> emp=employeService.getEmployee(id);
-		 if(emp.isPresent())
-		 {
-			 Employe currentEmploye=emp.get();
-			 
-			 String firstname=employe.getFirstName();
-			 if(firstname!=null)
-				 currentEmploye.setFirstName(firstname);
-			 
-			 String lastname=employe.getLastName();
-			 if(lastname!=null)
-				 currentEmploye.setLastName(lastname);
-			 
-			String mail=employe.getMail();
-			if(mail!=null)
-				currentEmploye.setMail(mail);
-			
-			String password=employe.getMotDePasse();
-			if(password!=null)
-				currentEmploye.setMotDePasse(password);
-			
-			employeService.saveEmployee(currentEmploye);
-			return currentEmploye;
-						
-		 }
-		 else
-		 {
-			 return null;
-		 }
+		return employeService.updateEmploye(id, employe);
 		
 	 }
 	 
 	 @DeleteMapping("/Employe/{id}")
-	 public void deleteEmploye (@PathVariable("id") final Long id)
+	 public String deleteEmploye (@PathVariable("id") final Long id)
 	 {
-		 employeService.deleteEmployee(id);
+		return employeService.deleteEmployee(id);
 	 }
 	 
 }
