@@ -11,5 +11,5 @@ import com.hrapi.src.Models.ServiceHR;
 @Repository
 public interface ServiceRepository extends CrudRepository<ServiceHR, Long> 
 {
-
+	 
 }

@@ -18,7 +18,7 @@ public class EmployeService
 	
 	
 	//Return an unique entity identified by id
-	public Optional<Employe> getEmployee(final Long id)
+	public Optional<Employe> getEmploye(final Long id)
 	{
 		return eRepos.findById(id);
 		
@@ -27,14 +27,14 @@ public class EmployeService
 	
 	
 	//return all entities
-	public Iterable<Employe> getEmployees()
+	public Iterable<Employe> getEmployes()
 	{
 		return eRepos.findAll();
 	}
 	
 	
 	//delete an entity identified by id
-	public String deleteEmployee(final Long id)
+	public String deleteEmploye(final Long id)
 	{
 		String result="Entity Delete";
 		eRepos.deleteById(id);
@@ -44,7 +44,7 @@ public class EmployeService
 	
 	
 	//save entity
-	public String saveEmployee(Employe employe)
+	public String saveEmploye(Employe employe)
 	{
 		
 		
@@ -118,7 +118,7 @@ public class EmployeService
 				currentEmploye.setMotDePasse(password);
 			
 		
-			result=	this.saveEmployee(currentEmploye);
+			result=	this.saveEmploye(currentEmploye);
 						
 		 }
 		 

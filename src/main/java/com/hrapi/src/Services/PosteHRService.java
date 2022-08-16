@@ -60,9 +60,10 @@ public class PosteHRService
 		return result;
 	}
 	
-	public String deletePoste(Long id)
+	public String deletePosteHR(Long id)
 	{
 		posteRepos.deleteById(id);
+		
 		return "Entity Delete";
 	}
 	

@@ -26,8 +26,8 @@ public class ServiceController
 		return serviceHRService.getAllServices();
 	}
 	
-	@GetMapping("/Service/{id}")
-	public Optional<ServiceHR> getService(@PathVariable("Id") Long Id)
+	@GetMapping("/Service/{Id}")
+	public Optional<ServiceHR> getService(@PathVariable("Id") final Long Id)
 	{
 		return serviceHRService.getById(Id);
 	}
@@ -39,13 +39,13 @@ public class ServiceController
 	}
 	
 	
-	@PutMapping("/Service/{id}")
+	@PutMapping("/Service/{Id}")
 	public String updateService(@PathVariable("Id") final Long Id,@RequestBody ServiceHR srv)
 	{
 		return serviceHRService.updateServiceHR(srv, Id);
 	}
 	
-	@DeleteMapping("Service/{i}")
+	@DeleteMapping("Service/{Id}")
 	public String deleteService(@PathVariable("Id") final Long Id)
 	{
 		return serviceHRService.deleteService(Id);

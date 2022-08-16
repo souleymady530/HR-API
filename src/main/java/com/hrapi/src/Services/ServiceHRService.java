@@ -28,14 +28,16 @@ public class ServiceHRService
 		return null;
 	}
 	
+	
+	
 	public String saveServiceHR(ServiceHR service)
 	{
 		String result="Entity Not Save";
-	
+		ServiceHR serv;
 		String titre=service.getTitre();
 		if(titre!=null)
 		{
-			serviceRepos.save(service);
+			serv=serviceRepos.save(service);
 			result="Entity Save";
 		}
 		return result;

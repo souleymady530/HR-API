@@ -28,8 +28,8 @@ public class PosteController
 	}
 	
 	
-	@GetMapping("/Poste/{id}")
-	public Optional<PosteHR> getPoste(@PathVariable("id") final Long id)
+	@GetMapping("/Poste/{Id}")
+	public Optional<PosteHR> getPoste(@PathVariable("Id") final Long id)
 	{
 		return posteHRService.getPosteById(id);
 	}
@@ -41,15 +41,15 @@ public class PosteController
 		return posteHRService.savePoste(poste);
 	}
 	
-	@PutMapping("/Poste/{id}")
-	public String updatePoste(@PathVariable("id") final Long id, PosteHR poste)
+	@PutMapping("/Poste/{Id}")
+	public String updatePoste(@PathVariable("Id") final Long id, PosteHR poste)
 	{
 		return posteHRService.updatePoste(poste, id);
 	}
 	
-	@DeleteMapping("/Poste/{id}")
-	public String deletePoste(@PathVariable("id") final Long id)
+	@DeleteMapping("/Poste/{Id}")
+	public String deletePosteHR(@PathVariable("Id") final Long id)
 	{
-		return posteHRService.deletePoste(id);
+		return posteHRService.deletePosteHR(id);
 	}
 }

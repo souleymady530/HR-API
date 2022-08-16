@@ -22,16 +22,16 @@ public class EmployeController
 	private EmployeService employeService;
 
 	 @GetMapping("/Employes")
-	public Iterable<Employe> getEmployees()
+	public Iterable<Employe> getEmployes()
 	{
-		return employeService.getEmployees();
+		return employeService.getEmployes();
 	}
 	
 	
 	 @PostMapping("/Employe/save")
 	 public String createEmploye(@RequestBody Employe employe)
 	 {
-		 return employeService.saveEmployee(employe);
+		 return employeService.saveEmploye(employe);
 	 }
 	 
 	 
@@ -40,7 +40,7 @@ public class EmployeController
 	 {
 		
 		 
-		 return employeService.getEmployee(id);
+		 return employeService.getEmploye(id);
 		 
 	 }
 	 
@@ -55,7 +55,7 @@ public class EmployeController
 	 @DeleteMapping("/Employe/{id}")
 	 public String deleteEmploye (@PathVariable("id") final Long id)
 	 {
-		return employeService.deleteEmployee(id);
+		return employeService.deleteEmploye(id);
 	 }
 	 
 }
