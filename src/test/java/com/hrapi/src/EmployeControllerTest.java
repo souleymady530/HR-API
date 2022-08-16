@@ -27,6 +27,7 @@ public class EmployeControllerTest
 
 	@Autowired
 	private MockMvc mvc;
+	
 	@Autowired
 	EmployeService employeService;
 
@@ -35,7 +36,7 @@ public class EmployeControllerTest
 	public void getEmployes() throws Exception 
 	{
 		
-		mvc.perform(get("/Employes")).andExpect(status().isOk()).andExpect(jsonPath("$[0].first_name", is("Zango")));
+		mvc.perform(get("/Employes")).andExpect(status().isOk()).andExpect(jsonPath("$[0].NAME", is("Zango")));
 		
 	}
 	
